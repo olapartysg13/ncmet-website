@@ -12,8 +12,18 @@ import {
 /* ------------------------------- HERO ------------------------------- */
 export function Hero() {
   return (
-    <section id="top" className="border-b border-line bg-paper">
-      <div className="mx-auto max-w-7xl px-6 pt-14 md:pt-20 pb-14 grid lg:grid-cols-12 gap-14 items-center">
+    <section id="top" className="relative overflow-hidden border-b border-line bg-paper">
+      {/* campus artwork as a faint background texture — not a featured photo */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-[440px] opacity-[0.08] grayscale bg-cover bg-bottom bg-no-repeat"
+        style={{
+          backgroundImage: "url(/images/campus.webp)",
+          maskImage: "linear-gradient(to top, black 20%, transparent)",
+          WebkitMaskImage: "linear-gradient(to top, black 20%, transparent)",
+        }}
+      />
+      <div className="relative mx-auto max-w-7xl px-6 pt-14 md:pt-20 pb-14 grid lg:grid-cols-12 gap-14 items-center">
         <div className="lg:col-span-7">
           <Reveal>
             <p className="kicker flex items-center gap-3">
@@ -49,14 +59,41 @@ export function Hero() {
 
         <div className="lg:col-span-5">
           <Reveal delay={150}>
-            <figure className="relative">
-              <img src="/images/campus.webp" alt="The NCMET campus building in Ghazipur — real photograph"
-                width={1402} height={1122} fetchPriority="high"
-                className="arch w-full h-auto object-cover ring-1 ring-line shadow-postcard" />
-              <figcaption className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap bg-ink text-paper text-[11px] font-extrabold uppercase tracking-[0.18em] px-5 py-2.5">
-                The campus · Bandhwa, Peer Nagar
-              </figcaption>
-            </figure>
+            <div className="relative rounded-sm border-2 border-gold/70 bg-card p-8 shadow-postcard">
+              <img src="/images/logo.webp" alt="" width={336} height={336}
+                loading="lazy" decoding="async"
+                className="absolute -top-8 -right-4 w-16 h-16 rounded-full bg-card ring-2 ring-gold" />
+              <p className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-gold">Session 2026-27</p>
+              <h2 className="display text-3xl md:text-4xl text-maroon mt-2">Admissions open.</h2>
+              <p className="text-sm text-ink-soft mt-3 leading-relaxed">
+                BCA · MCA · MBA · DCA · PGDCA · O Level · CCC · Tally ERP · ITI trades and more —
+                in regular and distance modes.
+              </p>
+              <ul className="mt-5 space-y-2.5">
+                {[
+                  "BCA eligibility: 12th pass, any stream",
+                  "O Level (NIELIT) batch from 15 July 2026",
+                  "Scholarship facility — terms apply",
+                ].map((x) => (
+                  <li key={x} className="flex items-start gap-2.5 text-sm font-bold text-ink">
+                    <span className="mt-0.5 w-5 h-5 rounded-full bg-green/10 text-green flex items-center justify-center shrink-0">
+                      <IconCheck className="w-3 h-3" />
+                    </span>
+                    {x}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-7 grid gap-3">
+                <a href="#admission"
+                  className="h-12 rounded-sm bg-maroon text-paper text-sm font-extrabold tracking-wide flex items-center justify-center hover:bg-maroon-deep transition-colors">
+                  Enquire now
+                </a>
+                <a href="tel:8887244055"
+                  className="h-12 rounded-sm border-2 border-ink text-ink text-sm font-extrabold flex items-center justify-center gap-2 hover:bg-ink hover:text-paper transition-colors">
+                  <IconPhone className="w-4 h-4" /> 88872 44055
+                </a>
+              </div>
+            </div>
           </Reveal>
         </div>
       </div>
@@ -406,9 +443,9 @@ export function Gallery() {
         <div className="grid grid-cols-2 gap-6">
           <Reveal delay={60}>
             <figure className="postcard -rotate-[1.2deg]">
-              <img src="/images/campus.webp" alt="NCMET campus building — real photograph"
-                width={1402} height={1122} loading="lazy" decoding="async" className="w-full h-44 object-cover" />
-              <figcaption className="pt-3 text-sm font-bold text-ink">The campus.</figcaption>
+              <img src="/images/director.webp" alt="Director Amar N. Singh — real photograph"
+                width={450} height={489} loading="lazy" decoding="async" className="w-full h-44 object-cover object-top" />
+              <figcaption className="pt-3 text-sm font-bold text-ink">The director.</figcaption>
             </figure>
           </Reveal>
           <Reveal delay={120}>

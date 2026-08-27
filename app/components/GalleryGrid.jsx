@@ -10,8 +10,7 @@ const PHOTOS = [
   { src: "/images/campus.webp", w: 1402, h: 1122, cat: "Campus", cap: "The campus building — Bandhwa, Peer Nagar, Ghazipur.", tilt: "rotate-[0.6deg]", hClass: "h-64 md:h-80" },
   { src: "/images/founder.webp", w: 600, h: 667, cat: "Leadership", cap: "Mr. Ram Janam Singh — Founder, Nuva Computer Education Society.", tilt: "-rotate-[1deg]", hClass: "h-72" },
   { src: "/images/director.webp", w: 450, h: 489, cat: "Leadership", cap: "Amar N. Singh — Director, NCMET.", tilt: "rotate-[1deg]", hClass: "h-72" },
-  { src: "/images/logo.webp", w: 336, h: 336, cat: "Brand & Identity", cap: "The official NCMET emblem.", tilt: "-rotate-[0.8deg]", hClass: "h-64 object-contain bg-white p-8" },
-  { src: "/images/logo-brand.webp", w: 200, h: 200, cat: "Brand & Identity", cap: "Emblem with wordmark — Learn · Lead · Transform.", tilt: "rotate-[1.2deg]", hClass: "h-64 object-contain bg-white p-8" },
+  { src: "/images/logo-brand.webp", w: 200, h: 200, cat: "Brand & Identity", cap: "The official NCMET emblem — Learn · Lead · Transform.", tilt: "rotate-[1.2deg]", hClass: "h-64 object-contain bg-white p-8" },
 ];
 
 export default function GalleryGrid() {
