@@ -5,7 +5,7 @@ import Reveal from "./Reveal";
 
 const CATS = ["All", "Campus", "Leadership", "Brand & Identity"];
 
-/* ONLY genuine photographs — each reviewed before inclusion. */
+/* Gallery data. */
 const PHOTOS = [
   { src: "/images/campus.webp", w: 1402, h: 1122, cat: "Campus", cap: "The campus building — Bandhwa, Peer Nagar, Ghazipur.", tilt: "rotate-[0.6deg]", hClass: "h-64 md:h-80" },
   { src: "/images/founder.webp", w: 600, h: 667, cat: "Leadership", cap: "Mr. Ram Janam Singh — Founder, Nuva Computer Education Society.", tilt: "-rotate-[1deg]", hClass: "h-72" },
@@ -46,11 +46,7 @@ export default function GalleryGrid() {
         ))}
       </div>
 
-      <p className="mt-12 rounded-sm border border-dashed border-line bg-card p-5 text-sm text-ink-soft leading-relaxed">
-        Only photographs that genuinely belong to the college are published here. Event, classroom
-        and student photographs will be added under new categories as the college shares them —
-        no stock or AI imagery is used anywhere on this website.
-      </p>
+
     </>
   );
 }

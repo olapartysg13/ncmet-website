@@ -170,7 +170,7 @@ export function Leadership() {
         <div className="mt-12 grid md:grid-cols-2 gap-8">
           <Reveal delay={60}>
             <figure className="postcard -rotate-1 max-w-md">
-              <img src="/images/founder.webp" alt="Mr. Ram Janam Singh, founder — real photograph"
+              <img src="/images/founder.webp" alt="Mr. Ram Janam Singh, founder"
                 width={600} height={667} loading="lazy" decoding="async" className="w-full h-72 object-cover" />
               <figcaption className="pt-4">
                 <p className="display text-2xl text-ink">Mr. Ram Janam Singh</p>
@@ -186,7 +186,7 @@ export function Leadership() {
           </Reveal>
           <Reveal delay={120}>
             <figure className="postcard rotate-1 max-w-md md:ml-auto">
-              <img src="/images/director.webp" alt="A. N. Singh, Director — real photograph"
+              <img src="/images/director.webp" alt="A. N. Singh, Director"
                 width={450} height={489} loading="lazy" decoding="async" className="w-full h-72 object-cover object-top" />
               <figcaption className="pt-4">
                 <p className="display text-2xl text-ink">Amar N. Singh</p>
@@ -422,14 +422,10 @@ export function Gallery() {
         <Reveal>
           <p className="kicker">08 · Photo gallery</p>
           <h2 className="display text-4xl md:text-5xl text-ink mt-3">
-            Real photographs.
-            <br />
-            <span className="italic text-maroon">No staging.</span>
+            Photo gallery.
           </h2>
           <p className="text-sm text-ink-soft mt-5 max-w-md leading-relaxed">
-            Every photograph on this website is genuine — the campus, the leadership and the
-            emblem. The full gallery lives on its own page, arranged by category, and grows as the
-            college shares new photographs.
+            Campus, leadership and the official emblem — arranged by category on a separate page.
           </p>
           <a href="/gallery"
             className="mt-7 inline-flex h-12 items-center gap-2 rounded-sm bg-maroon px-7 text-sm font-extrabold tracking-wide text-paper hover:bg-maroon-deep transition-colors">
@@ -439,14 +435,14 @@ export function Gallery() {
         <div className="grid grid-cols-2 gap-6">
           <Reveal delay={60}>
             <figure className="postcard -rotate-[1.2deg]">
-              <img src="/images/director.webp" alt="Director Amar N. Singh — real photograph"
+              <img src="/images/director.webp" alt="Director Amar N. Singh"
                 width={450} height={489} loading="lazy" decoding="async" className="w-full h-44 object-cover object-top" />
               <figcaption className="pt-3 text-sm font-bold text-ink">The director.</figcaption>
             </figure>
           </Reveal>
           <Reveal delay={120}>
             <figure className="postcard rotate-[1.2deg] mt-8">
-              <img src="/images/founder.webp" alt="Founder Mr. Ram Janam Singh — real photograph"
+              <img src="/images/founder.webp" alt="Founder Mr. Ram Janam Singh"
                 width={600} height={667} loading="lazy" decoding="async" className="w-full h-44 object-cover object-top" />
               <figcaption className="pt-3 text-sm font-bold text-ink">The founder.</figcaption>
             </figure>
