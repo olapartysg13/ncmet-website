@@ -13,15 +13,11 @@ import {
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden border-b border-line bg-paper">
-      {/* campus artwork as a faint background texture — not a featured photo */}
+      {/* campus artwork as a faint full-hero background texture — behind the text, low opacity */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-[440px] opacity-[0.08] grayscale bg-cover bg-bottom bg-no-repeat"
-        style={{
-          backgroundImage: "url(/images/campus.webp)",
-          maskImage: "linear-gradient(to top, black 20%, transparent)",
-          WebkitMaskImage: "linear-gradient(to top, black 20%, transparent)",
-        }}
+        className="pointer-events-none absolute inset-0 opacity-[0.09] grayscale bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url(/images/campus.webp)" }}
       />
       <div className="relative mx-auto max-w-7xl px-6 pt-14 md:pt-20 pb-14 grid lg:grid-cols-12 gap-14 items-center">
         <div className="lg:col-span-7">
@@ -99,7 +95,7 @@ export function Hero() {
       </div>
 
       {/* facts strip */}
-      <div className="rule-double">
+      <div className="relative rule-double">
         <div className="mx-auto max-w-7xl px-6 py-6 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             ["1999", "Year the journey began"],
