@@ -1,127 +1,152 @@
 @import "tailwindcss";
 
 @theme {
-  /* Design system: Institutional navy + gold accent (ui-ux-pro-max: Swiss Modernism 2.0) */
-  --color-primary: #1e3a5f;
-  --color-primary-deep: #152c49;
-  --color-secondary: #2563eb;
-  --color-accent: #a16207;
-  --color-accent-deep: #854f04;
-  --color-bg: #f8fafc;
-  --color-fg: #0f172a;
-  --color-card: #ffffff;
-  --color-muted: #e9eef5;
-  --color-muted-fg: #475569;
-  --color-line: #cbd5e1;
+  /* v2 — Heritage Editorial: warm ivory paper, ink, deep maroon, antique gold */
+  --color-paper: #faf6ef;
+  --color-paper-deep: #f2ebdd;
+  --color-card: #fffdf8;
+  --color-ink: #211a15;
+  --color-ink-soft: #6b6156;
+  --color-maroon: #7a1f1f;
+  --color-maroon-deep: #571414;
+  --color-gold: #b08427;
+  --color-gold-soft: #d9b45c;
+  --color-line: #e3dac6;
+  --color-green: #1e6b4f;
 
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-serif: "EB Garamond", Georgia, "Times New Roman", serif;
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Manrope", ui-sans-serif, system-ui, sans-serif;
 
-  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.06), 0 8px 24px -12px rgb(30 58 95 / 0.18);
-  --shadow-lift: 0 2px 4px rgb(15 23 42 / 0.08), 0 16px 40px -16px rgb(30 58 95 / 0.28);
+  --shadow-plate: 0 1px 0 rgb(33 26 21 / 0.08), 0 12px 32px -16px rgb(33 26 21 / 0.25);
+  --shadow-postcard: 0 2px 4px rgb(33 26 21 / 0.1), 0 18px 36px -18px rgb(33 26 21 / 0.35);
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 92px;
+  scroll-padding-top: 108px;
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-fg);
-  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  background: #1e3a5f;
-  color: #fff;
+  background: var(--color-maroon);
+  color: var(--color-paper);
 }
 
-/* Accessible, always-visible focus (keyboard nav) */
 :focus-visible {
-  outline: 2px solid var(--color-secondary);
-  outline-offset: 2px;
-  border-radius: 4px;
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
 }
 
-/* ---------- Scroll reveal (respects reduced motion) ---------- */
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.kicker {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-maroon);
+}
+
+/* thin double rule — heritage print look */
+.rule-double {
+  border-top: 1px solid var(--color-line);
+  position: relative;
+}
+.rule-double::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  right: 0;
+  border-top: 1px solid var(--color-line);
+}
+
+/* outline numeral */
+.num-outline {
+  font-family: var(--font-display);
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-gold);
+  font-weight: 700;
+}
+
+/* notice-board marquee */
+.marquee {
+  overflow: hidden;
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 36s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* scroll reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(20px);
   transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
   transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, transform;
 }
 .reveal.is-visible {
   opacity: 1;
   transform: none;
 }
 
-/* ---------- Utility flourishes ---------- */
-.serif-heading {
-  font-family: var(--font-serif);
-  font-weight: 600;
-  letter-spacing: -0.01em;
+/* postcard gallery */
+.postcard {
+  background: var(--color-card);
+  padding: 10px 10px 14px;
+  box-shadow: var(--shadow-postcard);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.postcard:hover {
+  transform: rotate(0deg) translateY(-6px) !important;
 }
 
-.eyebrow {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-accent);
+/* arch frame for hero portrait of the campus */
+.arch {
+  border-radius: 999px 999px 18px 18px;
 }
 
-.hero-frame {
-  position: relative;
+/* link ink underline */
+.u-ink {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: left calc(100% - 1px);
+  transition: background-size 0.25s ease;
 }
-.hero-frame::after {
-  content: "";
-  position: absolute;
-  inset: 16px -16px -16px 16px;
-  border: 1px solid var(--color-line);
-  border-radius: 1rem;
-  z-index: -1;
-}
-
-.grid-lines {
-  background-image: linear-gradient(rgb(30 58 95 / 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(30 58 95 / 0.05) 1px, transparent 1px);
-  background-size: 44px 44px;
+.u-ink:hover,
+.u-ink[aria-current="true"] {
+  background-size: 100% 1.5px;
 }
 
-.link-underline {
-  position: relative;
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
-.link-underline::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 2px;
-  background: currentColor;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.25s ease;
-}
-.link-underline:hover::after,
-.link-underline.active::after {
-  transform: scaleX(1);
-}
-
-/* Smooth card hover (150-300ms per guidelines) */
-.card-hover {
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-}
-.card-hover:hover {
+.card-lift:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-lift);
+  box-shadow: var(--shadow-plate);
 }
 
-/* Toast */
+/* toast */
 .toast {
   transform: translateY(150%);
   opacity: 0;
@@ -132,26 +157,39 @@ body {
   opacity: 1;
 }
 
-/* ---------- Reduced motion ---------- */
+/* horizontal snap rail */
+.rail {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-gold) transparent;
+}
+.rail > * {
+  scroll-snap-align: start;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  .marquee-track {
+    animation: none;
+    width: auto;
+    flex-wrap: wrap;
   }
   .reveal {
     opacity: 1;
     transform: none;
     transition: none;
   }
-  .card-hover,
-  .card-hover:hover {
+  .postcard,
+  .card-lift {
     transition: none;
-    transform: none;
   }
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }

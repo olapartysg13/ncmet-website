@@ -10,7 +10,7 @@ const PROGRAMME_OPTIONS = [
 ];
 
 const inputCls =
-  "w-full h-12 rounded-xl border border-line bg-white px-4 text-[15px] text-fg placeholder:text-muted-fg/70 focus:border-secondary focus:outline-none focus:ring-2 focus:ring-secondary/25 transition";
+  "w-full h-12 rounded-xl border border-line bg-white px-4 text-[15px] text-fg placeholder:text-ink-soft/70 focus:border-maroon focus:outline-none focus:ring-2 focus:ring-maroon/20 transition";
 
 export default function EnquiryForm() {
   const [values, setValues] = useState({ name: "", mobile: "", programme: "", message: "" });
@@ -54,13 +54,13 @@ export default function EnquiryForm() {
         <span className="mx-auto w-14 h-14 rounded-full bg-green-100 text-green-700 flex items-center justify-center">
           <IconCheck className="w-7 h-7" />
         </span>
-        <h3 className="serif-heading text-2xl text-primary mt-4">Enquiry received!</h3>
-        <p className="text-muted-fg mt-2 text-sm leading-relaxed">
+        <h3 className="display text-2xl text-maroon mt-4">Enquiry received!</h3>
+        <p className="text-ink-soft mt-2 text-sm leading-relaxed">
           Thank you, <strong className="text-fg">{values.name}</strong>. Our admission team will
           call you on <strong className="text-fg">{values.mobile}</strong> shortly regarding{" "}
           <strong className="text-fg">{values.programme}</strong>.
         </p>
-        <p className="text-xs text-muted-fg mt-4">
+        <p className="text-xs text-ink-soft mt-4">
           Need an instant answer? WhatsApp us —{" "}
           <a
             className="font-bold text-green-700 underline underline-offset-2"
@@ -79,7 +79,7 @@ export default function EnquiryForm() {
             setValues({ name: "", mobile: "", programme: "", message: "" });
             setStatus("idle");
           }}
-          className="mt-6 h-11 px-5 rounded-xl bg-muted text-sm font-bold text-primary hover:bg-line/60 transition-colors cursor-pointer"
+          className="mt-6 h-11 px-5 rounded-xl bg-paper-deep text-sm font-bold text-maroon hover:bg-paper-deep transition-colors cursor-pointer"
         >
           Send another enquiry
         </button>
@@ -88,9 +88,9 @@ export default function EnquiryForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="rounded-2xl border border-line bg-white p-6 md:p-8 shadow-card">
-      <h3 className="serif-heading text-2xl text-primary">Quick Enquiry</h3>
-      <p className="text-sm text-muted-fg mt-1">
+    <form onSubmit={onSubmit} noValidate className="rounded-2xl border border-line bg-white p-6 md:p-8 shadow-plate">
+      <h3 className="display text-2xl text-maroon">Quick Enquiry</h3>
+      <p className="text-sm text-ink-soft mt-1">
         Fill this and our admission team will connect with you.
       </p>
 
@@ -132,7 +132,7 @@ export default function EnquiryForm() {
         </div>
 
         <button type="submit" disabled={status === "sending"}
-          className="h-12 rounded-xl bg-accent hover:bg-accent-deep disabled:opacity-60 text-white text-[15px] font-bold transition-colors cursor-pointer">
+          className="h-12 rounded-xl bg-maroon hover:bg-maroon-deep disabled:opacity-60 text-white text-[15px] font-bold transition-colors cursor-pointer">
           {status === "sending" ? "Sending…" : "Submit Enquiry"}
         </button>
 
@@ -150,7 +150,7 @@ export default function EnquiryForm() {
           <IconWhatsApp className="w-5 h-5" /> Or WhatsApp us directly
         </a>
 
-        <p className="text-[11px] text-muted-fg text-center">
+        <p className="text-[11px] text-ink-soft text-center">
           Your details stay with the college admission office only.
         </p>
       </div>

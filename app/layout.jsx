@@ -10,18 +10,11 @@ export const metadata = {
     template: "%s | NCMET Ghazipur",
   },
   description:
-    "NICE College of Management and e-Technology (NCMET), Ghazipur — established 1999. BCA, MCA, MBA, DCA, PGDCA, NIELIT O Level & CCC, Tally ERP, ITI and career-focused programmes with practical learning, modern labs and placement assistance.",
+    "NICE College of Management and e-Technology (NCMET), Ghazipur — established 1999. BCA, MCA, MBA, DCA, PGDCA, NIELIT O Level & CCC, Tally ERP, ITI and career-focused programmes with practical learning and modern labs.",
   keywords: [
-    "NCMET Ghazipur",
-    "NICE College of Management and e-Technology",
-    "BCA college Ghazipur",
-    "O Level Ghazipur",
-    "CCC course Ghazipur",
-    "NIELIT",
-    "Tally ERP",
-    "ITI Ghazipur",
-    "computer courses Ghazipur",
-    "admission 2026",
+    "NCMET Ghazipur", "NICE College of Management and e-Technology", "BCA college Ghazipur",
+    "O Level Ghazipur", "CCC course Ghazipur", "NIELIT", "Tally ERP", "ITI Ghazipur",
+    "computer courses Ghazipur", "admission 2026",
   ],
   openGraph: {
     title: "NCMET Ghazipur — Learn. Lead. Transform.",
@@ -45,14 +38,14 @@ export default function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Inter:wght@400;500;600;700;800&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700;800&display=swap"
           rel="stylesheet"
         />
       </head>
       <body>
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded focus:bg-maroon focus:px-4 focus:py-2 focus:text-paper"
         >
           Skip to content
         </a>
