@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-14 grid gap-12 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <img src="/images/logo.png" alt="NCMET emblem" width={44} height={44} className="w-11 h-11 rounded-full ring-1 ring-paper/25" />
+            <img src="/images/logo.webp" alt="NCMET emblem" width={44} height={44} className="w-11 h-11 rounded-full ring-1 ring-paper/25" />
             <div>
               <p className="display text-xl">NCMET, Ghazipur</p>
               <p className="text-[10px] font-extrabold uppercase tracking-[0.16em] text-paper/60 mt-0.5">
@@ -24,7 +24,7 @@ export default function Footer() {
         <nav aria-label="Footer">
           <h3 className="text-[11px] font-extrabold uppercase tracking-[0.2em] text-gold-soft">On this page</h3>
           <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-2.5">
-            {[["#about","About"],["#programmes","Programmes"],["#academic","Academic"],["#admission","Admissions"],["#support","Support"],["#gallery","Campus"],["#events","Events"],["#contact","Contact"]].map(([h,l]) => (
+            {[["#about","About"],["#programmes","Programmes"],["#academic","Academic"],["#admission","Admissions"],["#support","Support"],["/gallery","Gallery"],["#events","Events"],["#contact","Contact"]].map(([h,l]) => (
               <li key={h}><a href={h} className="u-ink text-sm font-bold text-paper/75 hover:text-paper">{l}</a></li>
             ))}
           </ul>

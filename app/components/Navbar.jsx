@@ -8,7 +8,7 @@ const NAV = [
   ["#programmes", "Programmes"],
   ["#academic", "Academic"],
   ["#admission", "Admissions"],
-  ["#gallery", "Campus"],
+  ["/gallery", "Gallery"],
   ["#events", "Events"],
   ["#contact", "Contact"],
 ];
@@ -59,7 +59,7 @@ export default function Navbar() {
       >
         <div className="mx-auto max-w-7xl px-6 h-[76px] flex items-center justify-between gap-6">
           <a href="#top" className="flex items-center gap-3 min-w-0">
-            <img src="/images/logo.png" alt="NCMET emblem" width={48} height={48}
+            <img src="/images/logo.webp" alt="NCMET emblem" width={48} height={48}
               className="w-12 h-12 rounded-full ring-1 ring-line" />
             <span className="leading-none">
               <span className="display block text-[22px] text-ink">NCMET</span>

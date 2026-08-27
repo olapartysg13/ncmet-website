@@ -10,7 +10,7 @@ const PROGRAMME_OPTIONS = [
 ];
 
 const inputCls =
-  "w-full h-12 rounded-xl border border-line bg-white px-4 text-[15px] text-fg placeholder:text-ink-soft/70 focus:border-maroon focus:outline-none focus:ring-2 focus:ring-maroon/20 transition";
+  "w-full h-12 rounded-xl border border-line bg-white px-4 text-[15px] text-ink placeholder:text-ink-soft/70 focus:border-maroon focus:outline-none focus:ring-2 focus:ring-maroon/20 transition";
 
 export default function EnquiryForm() {
   const [values, setValues] = useState({ name: "", mobile: "", programme: "", message: "" });
@@ -56,9 +56,9 @@ export default function EnquiryForm() {
         </span>
         <h3 className="display text-2xl text-maroon mt-4">Enquiry received!</h3>
         <p className="text-ink-soft mt-2 text-sm leading-relaxed">
-          Thank you, <strong className="text-fg">{values.name}</strong>. Our admission team will
-          call you on <strong className="text-fg">{values.mobile}</strong> shortly regarding{" "}
-          <strong className="text-fg">{values.programme}</strong>.
+          Thank you, <strong className="text-ink">{values.name}</strong>. Our admission team will
+          call you on <strong className="text-ink">{values.mobile}</strong> shortly regarding{" "}
+          <strong className="text-ink">{values.programme}</strong>.
         </p>
         <p className="text-xs text-ink-soft mt-4">
           Need an instant answer? WhatsApp us —{" "}
@@ -88,7 +88,7 @@ export default function EnquiryForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="rounded-2xl border border-line bg-white p-6 md:p-8 shadow-plate">
+    <form onSubmit={onSubmit} noValidate className="rounded-2xl border border-line bg-white p-6 md:p-8 shadow-plate text-ink">
       <h3 className="display text-2xl text-maroon">Quick Enquiry</h3>
       <p className="text-sm text-ink-soft mt-1">
         Fill this and our admission team will connect with you.
@@ -100,14 +100,14 @@ export default function EnquiryForm() {
 
       <div className="mt-5 grid gap-4">
         <div>
-          <label htmlFor="enq-name" className="block text-sm font-bold text-fg mb-1.5">Student Name</label>
+          <label htmlFor="enq-name" className="block text-sm font-bold text-ink mb-1.5">Student Name</label>
           <input id="enq-name" className={inputCls} placeholder="Enter full name"
             value={values.name} onChange={set("name")} autoComplete="name" />
           {errors.name && <p className="text-xs font-semibold text-red-600 mt-1.5" role="alert">{errors.name}</p>}
         </div>
 
         <div>
-          <label htmlFor="enq-mobile" className="block text-sm font-bold text-fg mb-1.5">Mobile Number</label>
+          <label htmlFor="enq-mobile" className="block text-sm font-bold text-ink mb-1.5">Mobile Number</label>
           <input id="enq-mobile" className={inputCls} inputMode="numeric" maxLength={10}
             placeholder="10-digit mobile number" value={values.mobile}
             onChange={(e) => set("mobile")({ target: { value: e.target.value.replace(/\D/g, "") } })}
@@ -116,7 +116,7 @@ export default function EnquiryForm() {
         </div>
 
         <div>
-          <label htmlFor="enq-prog" className="block text-sm font-bold text-fg mb-1.5">Programme</label>
+          <label htmlFor="enq-prog" className="block text-sm font-bold text-ink mb-1.5">Programme</label>
           <select id="enq-prog" className={inputCls} value={values.programme} onChange={set("programme")}>
             <option value="">Select programme</option>
             {PROGRAMME_OPTIONS.map((p) => <option key={p}>{p}</option>)}
@@ -125,7 +125,7 @@ export default function EnquiryForm() {
         </div>
 
         <div>
-          <label htmlFor="enq-msg" className="block text-sm font-bold text-fg mb-1.5">Message (optional)</label>
+          <label htmlFor="enq-msg" className="block text-sm font-bold text-ink mb-1.5">Message (optional)</label>
           <textarea id="enq-msg" rows={3} className={`${inputCls} h-auto py-3`} placeholder="Any question about fees, hostel, timings…"
             value={values.message} onChange={set("message")} />
           {errors.message && <p className="text-xs font-semibold text-red-600 mt-1.5" role="alert">{errors.message}</p>}

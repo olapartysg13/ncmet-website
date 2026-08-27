@@ -50,7 +50,7 @@ export function Hero() {
         <div className="lg:col-span-5">
           <Reveal delay={150}>
             <figure className="relative">
-              <img src="/images/campus.jpg" alt="The NCMET campus building in Ghazipur — real photograph"
+              <img src="/images/campus.webp" alt="The NCMET campus building in Ghazipur — real photograph"
                 width={1402} height={1122} fetchPriority="high"
                 className="arch w-full h-auto object-cover ring-1 ring-line shadow-postcard" />
               <figcaption className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap bg-ink text-paper text-[11px] font-extrabold uppercase tracking-[0.18em] px-5 py-2.5">
@@ -137,8 +137,8 @@ export function Leadership() {
         <div className="mt-12 grid md:grid-cols-2 gap-8">
           <Reveal delay={60}>
             <figure className="postcard -rotate-1 max-w-md">
-              <img src="/images/founder.jpg" alt="Mr. Ram Janam Singh, founder — real photograph"
-                width={250} height={278} loading="lazy" className="w-full h-72 object-cover" />
+              <img src="/images/founder.webp" alt="Mr. Ram Janam Singh, founder — real photograph"
+                width={600} height={667} loading="lazy" decoding="async" className="w-full h-72 object-cover" />
               <figcaption className="pt-4">
                 <p className="display text-2xl text-ink">Mr. Ram Janam Singh</p>
                 <p className="text-[11px] font-extrabold uppercase tracking-wider text-gold mt-1">
@@ -153,8 +153,8 @@ export function Leadership() {
           </Reveal>
           <Reveal delay={120}>
             <figure className="postcard rotate-1 max-w-md md:ml-auto">
-              <img src="/images/director.jpg" alt="A. N. Singh, Director — real photograph"
-                width={150} height={163} loading="lazy" className="w-full h-72 object-cover object-top" />
+              <img src="/images/director.webp" alt="A. N. Singh, Director — real photograph"
+                width={450} height={489} loading="lazy" decoding="async" className="w-full h-72 object-cover object-top" />
               <figcaption className="pt-4">
                 <p className="display text-2xl text-ink">Amar N. Singh</p>
                 <p className="text-[11px] font-extrabold uppercase tracking-wider text-gold mt-1">Director</p>
@@ -218,14 +218,7 @@ export function Infrastructure() {
               <br />
               <span className="italic text-maroon">practical learning.</span>
             </h2>
-            <figure className="mt-8">
-              <img src="/images/library.jpg" alt="The NCMET library — real photograph of the book stacks"
-                width={600} height={319} loading="lazy"
-                className="w-full h-auto object-cover ring-1 ring-line shadow-plate" />
-              <figcaption className="text-xs font-bold text-ink-soft mt-2">
-                The college library — genuine photograph.
-              </figcaption>
-            </figure>
+
           </div>
         </Reveal>
         <div className="space-y-4">
@@ -391,54 +384,38 @@ export function Support() {
 /* ------------------------------ GALLERY ------------------------------ */
 export function Gallery() {
   return (
-    <section id="gallery" className="py-20 md:py-28 bg-paper-deep/50 border-y border-line overflow-hidden">
-      <div className="mx-auto max-w-7xl px-6">
+    <section className="py-20 md:py-28 bg-paper-deep/50 border-y border-line overflow-hidden">
+      <div className="mx-auto max-w-7xl px-6 grid lg:grid-cols-2 gap-12 items-center">
         <Reveal>
-          <p className="kicker">08 · The campus, as it is</p>
+          <p className="kicker">08 · Photo gallery</p>
           <h2 className="display text-4xl md:text-5xl text-ink mt-3">
             Real photographs.
             <br />
             <span className="italic text-maroon">No staging.</span>
           </h2>
-          <p className="text-sm text-ink-soft mt-4 max-w-xl">
-            Genuine photographs of the campus, library and leadership. New photographs are added
-            here as the college shares them.
+          <p className="text-sm text-ink-soft mt-5 max-w-md leading-relaxed">
+            Every photograph on this website is genuine — the campus, the leadership and the
+            emblem. The full gallery lives on its own page, arranged by category, and grows as the
+            college shares new photographs.
           </p>
+          <a href="/gallery"
+            className="mt-7 inline-flex h-12 items-center gap-2 rounded-sm bg-maroon px-7 text-sm font-extrabold tracking-wide text-paper hover:bg-maroon-deep transition-colors">
+            Open the gallery <IconArrowRight className="w-4 h-4" />
+          </a>
         </Reveal>
-        <div className="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-          <Reveal className="lg:col-span-2">
-            <figure className="postcard rotate-[0.6deg]">
-              <img src="/images/campus.jpg" alt="NCMET campus building — real photograph"
-                width={1402} height={1122} loading="lazy" className="w-full h-80 object-cover" />
-              <figcaption className="pt-3 text-sm font-bold text-ink">The campus, Peer Nagar.</figcaption>
-            </figure>
-          </Reveal>
-          <Reveal delay={80}>
-            <figure className="postcard -rotate-[1.2deg]">
-              <img src="/images/library.jpg" alt="NCMET library — real photograph"
-                width={600} height={319} loading="lazy" className="w-full h-44 object-cover" />
-              <figcaption className="pt-3 text-sm font-bold text-ink">The library stacks.</figcaption>
-            </figure>
-          </Reveal>
+        <div className="grid grid-cols-2 gap-6">
           <Reveal delay={60}>
-            <figure className="postcard rotate-[1deg]">
-              <img src="/images/founder.jpg" alt="Founder Mr. Ram Janam Singh — real photograph"
-                width={250} height={278} loading="lazy" className="w-full h-52 object-cover object-top" />
-              <figcaption className="pt-3 text-sm font-bold text-ink">The founder.</figcaption>
+            <figure className="postcard -rotate-[1.2deg]">
+              <img src="/images/campus.webp" alt="NCMET campus building — real photograph"
+                width={1402} height={1122} loading="lazy" decoding="async" className="w-full h-44 object-cover" />
+              <figcaption className="pt-3 text-sm font-bold text-ink">The campus.</figcaption>
             </figure>
           </Reveal>
           <Reveal delay={120}>
-            <figure className="postcard -rotate-[0.8deg]">
-              <img src="/images/director.jpg" alt="Director Amar N. Singh — real photograph"
-                width={150} height={163} loading="lazy" className="w-full h-52 object-cover" />
-              <figcaption className="pt-3 text-sm font-bold text-ink">The director.</figcaption>
-            </figure>
-          </Reveal>
-          <Reveal delay={160}>
-            <figure className="postcard rotate-[1.4deg]">
-              <img src="/images/logo-brand.jpg" alt="Official NCMET emblem — Learn, Lead, Transform"
-                width={200} height={200} loading="lazy" className="w-full h-52 object-contain bg-white p-6" />
-              <figcaption className="pt-3 text-sm font-bold text-ink">The emblem — Learn · Lead · Transform.</figcaption>
+            <figure className="postcard rotate-[1.2deg] mt-8">
+              <img src="/images/founder.webp" alt="Founder Mr. Ram Janam Singh — real photograph"
+                width={600} height={667} loading="lazy" decoding="async" className="w-full h-44 object-cover object-top" />
+              <figcaption className="pt-3 text-sm font-bold text-ink">The founder.</figcaption>
             </figure>
           </Reveal>
         </div>
